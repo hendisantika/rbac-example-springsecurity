@@ -9,8 +9,8 @@ import java.util.List;
  */
 public interface IssueService {
 
-    public List<Issue> findAll();
+    List<Issue> findAll();
 
-    public void register(Issue issue, String account);
+    void register(Issue issue, String account);
 
 }

@@ -9,8 +9,8 @@ import java.util.List;
  */
 public interface UserRepository {
 
-    public void register(User user, String roleName);
+    void register(User user, String roleName);
 
-    public List<User> findAll();
+    List<User> findAll();
 
 }

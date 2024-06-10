@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface IssueRepository {
 
-    public List<Issue> findAll();
+    List<Issue> findAll();
 
-    public void register(Issue issue, String account);
+    void register(Issue issue, String account);
 }
