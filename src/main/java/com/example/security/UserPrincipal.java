@@ -1,5 +1,6 @@
 package com.example.security;
 
+import com.example.models.Permission;
 import com.example.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -20,7 +21,7 @@ public class UserPrincipal implements UserDetails {
         this.user = user;
         String[] permissions = user.getRoles().stream()
                 .flatMap(role -> role.getPermissions().stream())
-                .map(permission -> permission.getName())
+                .map(Permission::getName)
                 .toArray(String[]::new);
         this.authorities = AuthorityUtils.createAuthorityList(permissions);
     }

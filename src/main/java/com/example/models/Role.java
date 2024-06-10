@@ -1,8 +1,17 @@
 package com.example.models;
 
-import lombok.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.Set;
 
 /**
@@ -42,10 +51,8 @@ public class Role {
 
     @Override
     public boolean equals(Object another) {
-        if (another == null || !(another instanceof Role))
+        if (another == null || !(another instanceof Role anotherRole))
             return false;
-
-        Role anotherRole = (Role) another;
 
         return anotherRole.roleId != null && (anotherRole.roleId == this.roleId);
     }

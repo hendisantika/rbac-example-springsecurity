@@ -1,8 +1,17 @@
 package com.example.models;
 
-import lombok.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.Set;
 
 /**
@@ -41,10 +50,8 @@ public class Permission {
 
     @Override
     public boolean equals(Object another) {
-        if (another == null || !(another instanceof Permission))
+        if (another == null || !(another instanceof Permission anotherPermission))
             return false;
-
-        Permission anotherPermission = (Permission) another;
 
         return (anotherPermission.permissionId != null && (anotherPermission.permissionId == this.permissionId))
                 || (anotherPermission.permissionId == null && anotherPermission.name != null && (anotherPermission.name.equals(this.name)));
