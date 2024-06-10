@@ -9,7 +9,7 @@ Original(Ninja Framework) : https://github.com/kawasima/rbac-example by @kawasim
 ## Get started
 
 ```bash
-$ mvn spring-boot:run
+$ mvn clean spring-boot:run
 ```
 
 or
@@ -18,3 +18,12 @@ or
 $ mvn clean package
 $ java -jar target/rbac-example-springsecurity-1.0.jar
 ```
+
+### Credentials Account
+
+| # | Username  | Password  |
+|---|-----------|-----------|
+| 1 | admin     | admin     |
+| 2 | developer | developer |
+| 3 | guest     | guest     |
+
